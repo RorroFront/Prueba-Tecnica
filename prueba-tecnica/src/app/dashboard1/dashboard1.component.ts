@@ -23,6 +23,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 export class Dashboard1Component {
 
-  value = 'Clear me';
+  value = '0';
 
 }

@@ -54,6 +54,28 @@
 
 /* FORMULARIO */
 
+.titulo-form1{
+    width: 100%;
+    background: red;
+    padding-right: 50px;
+
+}
+
+.titulo-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .example-form-field {
-    width: 200px;
+    width: 100%;
+  }
+
+
+
+
+  .titulo-container h3{
+
+    margin: 0;
+    margin-block-end: 5px;
+
   }

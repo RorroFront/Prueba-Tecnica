@@ -1,0 +1,59 @@
+
+.dashboard1{
+
+    padding: 0 50px 0 50px;
+    margin-block-start: 100px;
+}
+
+.navegation-container{
+    
+    width: 100%;
+
+}
+
+.navegation {
+    width: 30%;
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+
+}
+
+
+
+
+.data-container, .plan-container {
+    display: flex;
+    align-items: center;
+    
+}       
+
+
+
+.data-container h2, .plan-container h2 {
+
+    font-size: var(--sm);
+    font-weight: lighter;
+   
+
+}
+
+
+.navegation img{
+    width: 35;
+    height: 35px;
+    object-fit: cover;
+    padding-inline-end: 15px;
+}
+
+.divisory-line hr{
+    width: 100%;
+
+}
+
+
+
+/* FORMULARIO */
+
+.example-form-field {
+    width: 200px;
+  }

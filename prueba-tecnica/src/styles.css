@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --darkwhite:#eaeaea;
+    --white: #EFF5FC;
+    --grey:#a5a5a5;
+    --yellow:#fec702;
+  
+    --sm:16px;
+    --md:18px;
+    --lg:20px;
+  
+  }
+
+  body{
+  
+    font-family: "Quicksand", sans-serif;
+  
+    margin: 0;
+    
+  
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,30 +1,48 @@
 <div class="modal-overlay">
     <div class="modal-content">
+      <div class="modal-container">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div>
-          <label for="titulo">Titulo</label>
+        <div class="encabezado">
+          <h3>Agregar Etapa</h3>
+          <div class="borderline"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="titulo">Titulo de la iniciativa</label>
           <input id="titulo" formControlName="title" />
         </div>
-        <div>
-          <label for="descripcion">Descripcion</label>
+        <div class="form-group">
+          <label for="descripcion">Descripcion de la etapa</label>
           <input id="descripcion" formControlName="description" />
         </div>
-        <div>
-          <label for="entregable">Entregable</label>
+        <div class="form-group">
+          <div class="labelduo">
+            <label for="entregable">Entregable de la etapa</label>
+            <img src="/assets/informacion.svg" alt="information">
+          </div>
           <input id="entregable" formControlName="deliverableTask" />
         </div>
-        <div>
+        
+        <div class="form-group">
+        <div class="labelduo">
           <label for="fechaInicio">Fecha Inicio</label>
+          <img src="/assets/informacion.svg" alt="information">
+        </div>
           <input id="fechaInicio" formControlName="startDate" />
         </div>
-        <div>
+
+        <div  class="form-group">
+        <div class="labelduo">
           <label for="fechaFin">Fecha Fin</label>
+          <img src="/assets/informacion.svg" alt="information">
+        </div>
           <input id="fechaFin" formControlName="endDate" />
         </div>
         <div class="buttons">
-          <button type="button" (click)="onCancel()">Cancelar</button>
-          <button type="submit" >Agregar</button>
+          <button type="button" id="cancelar" (click)="onCancel()">Cancelar</button>
+          <button type="submit"  id="agregar" >Agregar</button>
         </div>
       </form>
+    </div>
     </div>
   </div>

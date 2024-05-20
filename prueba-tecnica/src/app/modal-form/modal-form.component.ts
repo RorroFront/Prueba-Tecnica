@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { stageObject } from '../interfacemodel';
@@ -16,8 +16,11 @@ import { stageObject } from '../interfacemodel';
 
 export class ModalFormComponent implements OnInit {
 
+  @Output() tableOn = new EventEmitter();
   @Output() cancel = new EventEmitter();
   @Output() submit = new EventEmitter();
+  @Input()  stageEditObject:{} = {}
+
 
   form: FormGroup;
 
@@ -27,6 +30,7 @@ export class ModalFormComponent implements OnInit {
 
     this.form = new FormGroup({
 
+      id: new FormControl(this.generateId()),
       title: new FormControl(''),
       description: new FormControl(''),
       deliverableTask: new FormControl(''),
@@ -41,6 +45,10 @@ export class ModalFormComponent implements OnInit {
 
   }
 
+  generateId(): string {
+    return new Date().toISOString();
+  }
+
 
 
 
@@ -51,20 +59,24 @@ export class ModalFormComponent implements OnInit {
     if (this.form.valid) {
 
       this.submit.emit(this.form.value);
-
+      this.tableOn.emit();  
 
 
 
     }
   }
+  
 
   onCancel() {
     this.cancel.emit();
   }
 
+
+  
+
   ngOnInit(): void {
 
-
+console.log(this.stageEditObject)
 
   }
 

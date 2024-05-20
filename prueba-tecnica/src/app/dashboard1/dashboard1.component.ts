@@ -11,6 +11,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
 import { ReactiveformComponent } from '../reactiveform/reactiveform.component';
 import { stageObject } from '../interfacemodel';
+import { HeaderComponent } from '../header/header.component';
 
 
 
@@ -23,7 +24,7 @@ import { stageObject } from '../interfacemodel';
      MatButtonModule,
      MatIconModule,NgIf,NgForOf,
      CommonModule, MatDatepickerModule,
-     MatTooltipModule,ModalFormComponent, ReactiveformComponent,
+     MatTooltipModule,ModalFormComponent, ReactiveformComponent, HeaderComponent,
     
     ],
   providers: [provideNativeDateAdapter()],
@@ -41,6 +42,7 @@ export class Dashboard1Component {
   value = '0';
   nombre:string = "hola";
   stages:stageObject[] = []
+  stageEditObject:{}={};
 
 
   formData = {
@@ -54,30 +56,63 @@ export class Dashboard1Component {
   };
 
 
-  formData2 = {
-    idsistema: '',
-    nombre: '',
-    descripcion: '',
-    mensaje: '',
-    objetivos:'',
+  formDataright = {
+    proyectid: '',
+    name: '',
+    description: '',
+    creationdate: '',
+    capex:'',
+    opex:'',
+
     
   };
 
+  formDataDown = {
+    projectresponsables: '',
+    admin: '',
+    involved: '',
+    
+  
+  };
+
+
+
+  showDropdown = false;
+  objetivosOptions = ['Objetivo 1', 'Objetivo 2', 'Objetivo 3', 'Objetivo 4', 'Objetivo 5','Objetivo 6','Objetivo 7','Objetivo 8'];
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
+
+  selectObjetivo(option: string) {
+    this.formData.objetivos = option;
+    this.showDropdown = false;
+  }
 
  
   editData(editStage:any){
+
+    this.stageEditObject = editStage
+
+    this.isModalVisible = true;
     
     console.log(editStage)
-    this.isModalVisible = true;
+
 
   }
 
+  onDeleteStage(id: string) {
+    this.stages = this.stages.filter(item => item.id !== id);
+  }
+
+  
   onSubmit() {
     console.log('Formulario enviado', this.formData);
   }
 
 
   isModalVisible = false;
+  isTableVisible = false;
 
   showModal() {
     this.isModalVisible = true;
@@ -87,30 +122,35 @@ export class Dashboard1Component {
     this.isModalVisible = false;
   }
 
+
+
+
+  showTable() {
+    this.isTableVisible = true;
+  }
+
+  hideTable() {
+    this.isTableVisible = false;
+  }
+
+  handleTableOn() {
+    this.showTable();
+  }
+
+
   handleFormSubmit(formValue:stageObject) {
-    console.log('Formulario enviado:', formValue);
+    // console.log('Formulario enviado:', formValue);
+    // console.log('stages',this.stages)
+
     this.stages.push(formValue)
-    console.log('stages',this.stages)
+    
 
     this.hideModal();
   }
 }
 
 
-  // mostrarFormulario = false;
-  // nombre?: string;
-  // opcionSeleccionada?: string;ng
-  // opciones: string[] = ['Opción 1', 'Opción 2', 'Opción 3'];
 
-  // toggleFormulario() {
-  //   this.mostrarFormulario = !this.mostrarFormulario;
-  // }
-
-  // onSubmit() {
-  //   // Lógica para procesar el formulario
-  //   console.log('Nombre:', this.nombre);
-  //   console.log('Opción seleccionada:', this.opcionSeleccionada);
-  // }
 
 
 

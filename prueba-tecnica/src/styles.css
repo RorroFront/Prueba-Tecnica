@@ -18,6 +18,7 @@
     font-family: "Quicksand", sans-serif ;
   
     margin: 0;
+
     
   
   }
@@ -44,9 +45,7 @@
 }
 
 
-.mat-mdc-icon-button {
-  color: var(--grey) !important;
-}
+
 
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -65,3 +64,18 @@
 
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+.custom-datepicker-toggle-icon .mat-datepicker-toggle-default-icon {
+  background-image: url('/assets/calendario.svg') ;
+  /* Puedes ajustar el tamaño y otras propiedades según sea necesario */
+  background-size: cover;
+  width: 24px; /* Ajusta el tamaño del icono */
+  height: 24px;
+  stroke-width: 1px !important;
+}
+
+.mat-datepicker-toggle .mat-icon {
+  /* Ajusta el grosor de las líneas */
+  stroke-width: 1px !important;
+}
+

@@ -1,5 +1,5 @@
+<app-header></app-header>
 <div class="dashboard1">
-
   <div class="navegation-container">
     <nav class="navegation">
       <div class="data-container">
@@ -19,7 +19,6 @@
 
   <div class="form">
     <div class="titulo-container">
-
       <!-- Formulario Izquierdo -->
       <div class="form-left">
         <form (ngSubmit)="onSubmit()">
@@ -42,8 +41,12 @@
 
           <div class="form-group">
             <label for="objetivos">Objetivos a los que contribuye el proyecto</label>
-            <input type="objetivos" id="objetivos" name="objetivos" [(ngModel)]="formData.objetivos"
-              class="form-control" />
+            <input type="text" id="objetivos" name="objetivos" [(ngModel)]="formData.objetivos" class="form-control"
+              (click)="toggleDropdown()"  readonly [class.active]="showDropdown" />
+            <div *ngIf="showDropdown" class="objetivos-dropdown">
+              <div *ngFor="let option of objetivosOptions" (click)="selectObjetivo(option)" class="opcion">{{ option }}
+              </div>
+            </div>
           </div>
 
           <div class="fechas-container">
@@ -60,12 +63,12 @@
 
           <div class="datepicker-container">
             <mat-form-field class="datepicker-left">
-              <!-- <mat-label>Choose a date</mat-label> -->
-              <!-- <input class="datepicker-input" matInput [matDatepicker]="picker"> -->
+
               <input class="datepicker-input" type="text" matInput [matDatepicker]="picker1" />
 
-              <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker-toggle class="custom-datepicker-toggle-icon" matIconSuffix
+                [for]="picker1"></mat-datepicker-toggle>
+
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
 
@@ -75,7 +78,9 @@
               <input class="datepicker-input" type="text" matInput [matDatepicker]="picker2" />
 
               <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker-toggle class="custom-datepicker-toggle-icon" matIconSuffix
+                [for]="picker2"></mat-datepicker-toggle>
+
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
           </div>
@@ -95,105 +100,68 @@
         </form>
       </div>
 
-
       <!-- Formulario Derecho -->
-     
-
-      
-      
 
       <div class="form-right">
         <form (ngSubmit)="onSubmit()">
-
           <div class="primerbloque">
-
-            <div class="form-group" id="idproyecto">
-              <label class="nombre" for="idproyecto">ID Proyecto</label>
-              <input class="idproyecto" placeholder="Escribe el número de ID Proyectos Sipres" type="idsistema"
-                id="idsistema" name="idsistema" [(ngModel)]="formData.idsistema" class="form-control" />
+            <div class="form-group" id="projectid">
+              <label class="idproject" for="idproyecto">ID Proyecto</label>
+              <input class="projectid" placeholder="Escribe el número de ID Proyectos Sipres" type="text"
+                id="inputprojectid" name="projectid" [(ngModel)]="formDataright.proyectid" class="form-control" />
             </div>
 
             <div class="example-button-row botonderecho">
               <button mat-flat-button color="primary">Buscar Proyecto</button>
             </div>
-
           </div>
-
-
 
           <div class="form-group">
             <label for="nombre">Nombre del proyecto</label>
-            <input type="nombre" id="nombre" name="nombre" [(ngModel)]="formData.nombre" class="form-control" />
+            <input type="text" id="projectname" name="nombre" [(ngModel)]="formDataright.name" class="form-control" />
           </div>
 
           <div class="form-group">
-            <label for="descripcion">Descripción del proyecto</label>
-            <input type="text" id="descripcion" name="descripcion" [(ngModel)]="formData.descripcion"
+            <label for="description">Descripción del proyecto</label>
+            <input type="text" id="description" name="description" [(ngModel)]="formDataright.description"
               class="form-control" />
           </div>
 
-
-
-
           <div class="ultimobloque">
-
-            <div class="form-group" id="fechacreacion">
-              <label for="objetivos">Fecha de creación</label>
-              <input placeholder="dd/mm/aaa" type="text" id="objetivos" name="objetivos" [(ngModel)]="formData.objetivos"
-                class="form-control" />
+            <div class="form-group" id="creationdate">
+              <label for="creationdate">Fecha de creación</label>
+              <input placeholder="dd/mm/aaa" type="text" id="inputcreationdate" name="creationdate"
+                [(ngModel)]="formDataright.creationdate" class="form-control" />
             </div>
 
-
-            <div class="titulos" id="titulos" >
-
+            <div class="title" id="title">
               <div class="form-group capex">
                 <label for="capex">Capex</label>
-                <input type="text" id="capex" name="capex" [(ngModel)]="formData.objetivos" class="form-control" />
+                <input type="text" id="capex" name="capex" [(ngModel)]="formDataright.capex" class="form-control" />
               </div>
-  
+
               <div class="form-group opex">
                 <label for="opex">Opex</label>
-                <input type="text" id="opex" name="opex" [(ngModel)]="formData.objetivos" class="form-control" />
+                <input type="text" id="opex" name="opex" [(ngModel)]="formDataright.opex" class="form-control" />
               </div>
-
             </div>
-
-            
-            
-            
           </div>
 
           <div class="firmas">
-
             <div class="pilar">
               <p>Pilar del Proyecto</p>
-              <hr>
+              <hr />
             </div>
 
-            <div class="clasificacion" >
+            <div class="clasificacion">
               <p>Clasificación Comité de Inversión</p>
-              <hr>
+              <hr />
             </div>
           </div>
-          
-
-
-
-
-
-
         </form>
-
       </div>
-
-
     </div>
-
-
-
-
   </div>
-
 
   <!-- //FORMULARIO INFERIOR -->
   <div class="formdown">
@@ -202,19 +170,19 @@
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="nombre">Responsables del proyecto</label>
-            <input type="responsables" id="responsables" name="responsables" [(ngModel)]="formData2.nombre"
+            <input type="responsables" id="responsables" name="responsables" [(ngModel)]="formDataDown.projectresponsables"
               class="form-control" placeholder="Agregar responsables de proyecto..." />
           </div>
 
           <div class="form-group">
-            <label for="administrador">Administrador</label>
-            <input type="administrador" id="administrador" name="administrador" [(ngModel)]="formData2.descripcion"
+            <label for="admin">Administrador</label>
+            <input type="admin" id="admin" name="admin" [(ngModel)]="formDataDown.admin"
               class="form-control" placeholder="Agregar administrador..." />
           </div>
 
           <div class="form-group">
-            <label for="involucrados">Involucrados (Opcional)</label>
-            <input type="involucrados" id="involucrados" name="involucrados" [(ngModel)]="formData2.objetivos"
+            <label for="involved">Involucrados (Opcional)</label>
+            <input type="involved" id="involved" name="involved" [(ngModel)]="formDataDown.involved"
               class="form-control" placeholder="Agregar involucrado..." />
           </div>
 
@@ -224,7 +192,6 @@
       </div> -->
 
           <!-- <button type="submit" class="btn btn-primary">Enviar</button> -->
-
         </form>
       </div>
     </div>
@@ -233,12 +200,13 @@
   <div (click)="showModal()" class="agregaretapa">
     <img src="/assets/agregar.svg" alt="agregar" />
     <div>
-      <span >Agregar etapa</span>
+      <span>Agregar etapa</span>
     </div>
   </div>
 
-  <app-modal-form *ngIf="isModalVisible" (cancel)="hideModal()" (submit)="handleFormSubmit($event)"></app-modal-form>
+  <app-modal-form (tableOn)="handleTableOn()" [stageEditObject]="stageEditObject" *ngIf="isModalVisible"
+    (cancel)="hideModal()" (submit)="handleFormSubmit($event)"></app-modal-form>
 
-  <app-reactiveform (editStage)="editData($event)" [stages]="stages" ></app-reactiveform>
-
+  <app-reactiveform (deleteStage)="onDeleteStage($event)" (editStage)="editData($event)" [stages]="stages"
+    *ngIf="isTableVisible"></app-reactiveform>
 </div>

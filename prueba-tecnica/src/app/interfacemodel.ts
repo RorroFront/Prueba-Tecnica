@@ -4,6 +4,7 @@ export interface stageObject {
     deliverableTask:string,
     startDate:string,
     endDate:string,
+    id:string,
     
   
   }

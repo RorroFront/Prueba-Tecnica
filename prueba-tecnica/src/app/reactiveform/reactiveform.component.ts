@@ -12,17 +12,32 @@ import { stageObject } from '../interfacemodel';
 })
 export class ReactiveformComponent implements OnInit {
 
-
-
+  @Output() deleteStage = new EventEmitter<string>();
   @Output() editStage = new EventEmitter()
   @Input() stages:stageObject[] = []
 
 
+  
+ 
   edit(item:{}){
     this.editStage.emit(item)
-    console.log('editando', item)
+    // console.log('editando', item)
   }
 
+  
+  delete(id:string){
+    
+    // this.stages = this.stages.filter(item => item.id !== id)
+    this.deleteStage.emit(id);
+      
+    
+    
+  }
+  
+  reset(){
+
+    this.stages = this.stages
+  }
 
 
 

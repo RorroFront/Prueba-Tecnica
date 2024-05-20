@@ -19,15 +19,108 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
+    height: fit-content;
   }
   
-  .buttons {
-    display: flex;
-    justify-content: flex-end;
-  }
   
-  .buttons button {
-    margin-left: 10px;
-  }
+  
+  
 
+  .borderline {
+    width: 100%;
+    height: 4px;
+    background-color: var(--yellow); /* Puedes cambiar el color si lo deseas */
+    margin: 0; 
+}
+
+h3 {
+  margin:0;
+  font-weight: bold;
+}
+
+label{
+  display: block;
+}
+
+input{
+  width: 100%;
+  border: 1px solid var(--grey);
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.encabezado{
+  margin-block-end: 30px;
+}
+
+
+.modal-container{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.form-group{
+  margin-block-end: 13px;
+}
+
+.form-group input{
+
+  height: 30px;
+
+}
+
+#descripcion{
+  height: 70px;
+}
+
+img{
+  height: 15px;
+}
+
+.labelduo{
+  display: flex;
+  align-items: center;
   
+}
+
+.labelduo img{
+  
+  margin-inline-start: 8px;
+  margin-block-end: 3px;
+  
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  
+ 
+}
+
+button{
+  border-radius: 2px;
+  border: none;
+  height: 50px;
+  width: 37%;
+  font-size: var(--smallest);
+  text-align: center;
+  /* color: black; */
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+  margin-block-start: 15px;
+  margin-block-end: 20px;
+}
+
+#agregar{
+  background-color: var(--yellow);
+
+}
+
+#cancelar{
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+
+}

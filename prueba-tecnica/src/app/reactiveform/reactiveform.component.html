@@ -1,0 +1,29 @@
+<div class="table-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Descripcion</th>
+          <th>Entregable</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Fin</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí puedes añadir filas de datos -->
+        <tr *ngFor="let item of stages">
+          <td>{{item.title}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.deliverableTask}}</td>
+          <td>{{item.startDate}}</td>
+          <td>{{item.endDate}}</td>
+          <td><button (click)="edit(item)" >Edit</button></td>
+          <td><button>Delete</button></td>
+        </tr>
+        <!-- Añade más filas según sea necesario -->
+      </tbody>
+    </table>
+  </div>
+  

@@ -3,27 +3,27 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div>
           <label for="titulo">Titulo</label>
-          <input id="titulo" formControlName="titulo" />
+          <input id="titulo" formControlName="title" />
         </div>
         <div>
           <label for="descripcion">Descripcion</label>
-          <input id="descripcion" formControlName="descripcion" />
+          <input id="descripcion" formControlName="description" />
         </div>
         <div>
           <label for="entregable">Entregable</label>
-          <input id="entregable" formControlName="entregable" />
+          <input id="entregable" formControlName="deliverableTask" />
         </div>
         <div>
           <label for="fechaInicio">Fecha Inicio</label>
-          <input id="fechaInicio" formControlName="fechaInicio" />
+          <input id="fechaInicio" formControlName="startDate" />
         </div>
         <div>
           <label for="fechaFin">Fecha Fin</label>
-          <input id="fechaFin" formControlName="fechaFin" />
+          <input id="fechaFin" formControlName="endDate" />
         </div>
         <div class="buttons">
           <button type="button" (click)="onCancel()">Cancelar</button>
-          <button type="submit">Agregar</button>
+          <button type="submit" >Agregar</button>
         </div>
       </form>
     </div>

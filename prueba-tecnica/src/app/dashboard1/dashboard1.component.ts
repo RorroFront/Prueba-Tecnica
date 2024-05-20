@@ -9,6 +9,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
+import { ReactiveformComponent } from '../reactiveform/reactiveform.component';
+import { stageObject } from '../interfacemodel';
 
 
 
@@ -21,7 +23,7 @@ import { ModalFormComponent } from '../modal-form/modal-form.component';
      MatButtonModule,
      MatIconModule,NgIf,NgForOf,
      CommonModule, MatDatepickerModule,
-     MatTooltipModule,ModalFormComponent, 
+     MatTooltipModule,ModalFormComponent, ReactiveformComponent,
     
     ],
   providers: [provideNativeDateAdapter()],
@@ -38,6 +40,7 @@ export class Dashboard1Component {
 
   value = '0';
   nombre:string = "hola";
+  stages:stageObject[] = []
 
 
   formData = {
@@ -61,6 +64,13 @@ export class Dashboard1Component {
   };
 
 
+ 
+  editData(editStage:any){
+    
+    console.log(editStage)
+    this.isModalVisible = true;
+
+  }
 
   onSubmit() {
     console.log('Formulario enviado', this.formData);
@@ -77,8 +87,11 @@ export class Dashboard1Component {
     this.isModalVisible = false;
   }
 
-  handleFormSubmit(formValue: string) {
+  handleFormSubmit(formValue:stageObject) {
     console.log('Formulario enviado:', formValue);
+    this.stages.push(formValue)
+    console.log('stages',this.stages)
+
     this.hideModal();
   }
 }

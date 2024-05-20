@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { stageObject } from '../interfacemodel';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 
 
+
 export class ModalFormComponent implements OnInit {
 
   @Output() cancel = new EventEmitter();
@@ -21,13 +23,15 @@ export class ModalFormComponent implements OnInit {
 
   constructor() {
 
+
+
     this.form = new FormGroup({
 
-      titulo: new FormControl(''),
-      descripcion: new FormControl(''),
-      entregable: new FormControl(''),
-      fechaInicio: new FormControl(''),
-      fechaFin: new FormControl(''),
+      title: new FormControl(''),
+      description: new FormControl(''),
+      deliverableTask: new FormControl(''),
+      startDate: new FormControl(''),
+      endDate: new FormControl(''),
 
 
 
@@ -38,9 +42,19 @@ export class ModalFormComponent implements OnInit {
   }
 
 
+
+
+
   onSubmit() {
+
+    
     if (this.form.valid) {
+
       this.submit.emit(this.form.value);
+
+
+
+
     }
   }
 
@@ -51,12 +65,12 @@ export class ModalFormComponent implements OnInit {
   ngOnInit(): void {
 
 
-    
+
   }
 
 
 
 
- 
-  
+
+
 }

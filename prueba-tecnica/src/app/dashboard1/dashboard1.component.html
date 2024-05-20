@@ -230,13 +230,15 @@
     </div>
   </div>
 
-  <div class="agregaretapa">
+  <div (click)="showModal()" class="agregaretapa">
     <img src="/assets/agregar.svg" alt="agregar" />
     <div>
-      <span (click)="showModal()">Agregar etapa</span>
+      <span >Agregar etapa</span>
     </div>
   </div>
 
   <app-modal-form *ngIf="isModalVisible" (cancel)="hideModal()" (submit)="handleFormSubmit($event)"></app-modal-form>
+
+  <app-reactiveform (editStage)="editData($event)" [stages]="stages" ></app-reactiveform>
 
 </div>

@@ -1,23 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
+
     --darkwhite:#eaeaea;
-    --white: #EFF5FC;
+    --blue: #EFF5FC;
     --grey:#a5a5a5;
     --yellow:#fec702;
   
-    --sm:16px;
-    --md:18px;
-    --lg:20px;
+    --smallest:13px;
+    --sm:14px;
+    --md:16px;
+    --lg:18px;
   
   }
 
   body{
   
-    font-family: "Quicksand", sans-serif;
+    font-family: "Quicksand", sans-serif ;
   
     margin: 0;
     
   
   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+  .mat-mdc-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+
+
+  }
+
+  form-left[_ngcontent-ng-c4234109580] input[_ngcontent-ng-c4234109580] {
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important;
+  border: 1px solid var(--grey) !important;
+}
+
+
+.mat-mdc-icon-button {
+  color: var(--grey) !important;
+}
+
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--grey) !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  flex: auto;
+  will-change: auto;
+
+}
+
+
+
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

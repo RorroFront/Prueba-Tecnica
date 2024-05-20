@@ -1,81 +1,402 @@
-
-.dashboard1{
-
-    padding: 0 50px 0 50px;
-    margin-block-start: 100px;
+.dashboard1 {
+  padding: 0 50px 0 50px;
+  margin-block-start: 80px;
 }
 
-.navegation-container{
-    
-    width: 100%;
-
+.navegation-container {
+  width: 100%;
 }
 
 .navegation {
-    width: 30%;
-    display: grid;
-    grid-template-columns: 1fr  1fr;
-
+  width: 30%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-
-
-
-.data-container, .plan-container {
-    display: flex;
-    align-items: center;
-    
-}       
-
-
-
-.data-container h2, .plan-container h2 {
-
-    font-size: var(--sm);
-    font-weight: lighter;
-   
-
+.data-container,
+.plan-container {
+  display: flex;
+  align-items: center;
 }
 
-
-.navegation img{
-    width: 35;
-    height: 35px;
-    object-fit: cover;
-    padding-inline-end: 15px;
+.data-container h2,
+.plan-container h2 {
+  font-size: var(--sm);
+  font-weight: lighter;
 }
 
-.divisory-line hr{
-    width: 100%;
-
+.navegation img {
+  width: 35;
+  height: 35px;
+  object-fit: cover;
+  padding-inline-end: 15px;
 }
 
-
+.divisory-line hr {
+  width: 100%;
+}
 
 /* FORMULARIO */
 
-.titulo-form1{
-    width: 100%;
-    background: red;
-    padding-right: 50px;
+label {
 
+  font-family: "Quicksand", sans-serif !important;
+
+}
+
+.form {
+  width: 100%;
+  margin-block-start: 50px;
 }
 
 .titulo-container {
-    display: flex;
-    justify-content: space-between;
+  /* width: auto;     */
+  display: flex;
+  width: 100%;
+  /* background-color: teal; */
+}
+
+.titulo-container .form-group {
+  /* width: auto;     */
+  margin-block-end: 15px;
+}
+
+.form-left {
+  width: 50%;
+  padding-right: 50px;
+}
+
+
+.form-left #idsistema,
+#nombre,
+#descripcion,
+#objetivos {
+  /* background: red; */
+  border: 1px solid var(--grey);
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form-right {
+  width: 50%;
+  padding-left: 50px;
 }
 
 .example-form-field {
-    width: 100%;
-  }
+  width: 100%;
+  height: 45%;
+}
+
+.example-form-field-white {
+  width: 100%;
+  height: 45%;
+  background-color: white;
+}
+
+.titulo-container h3 {
+  margin: 0;
+  margin-block-end: 5px;
+}
+
+/* ?Formulario correcto  */
+
+/*   
+  .form-left {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  } */
+
+#idsistema {
+  background-color: var(--darkwhite);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-block-end: 5px;
+}
+
+.form-control {
+  /* background: red; */
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* CALENDARIO */
+/* *label */
+
+.fechainicio,
+.fechafinal {
+  width: 50%;
+  display: flex;
+  align-items: center;
+
+}
+
+.fechas-container {
+
+  height: 30px;
+  margin-block-start: 20px;
+  margin-block-end: 0px;
+  width: 100%;
+  display: flex;
+}
+
+.fechafinal {
+  /* background-color: red; */
+  padding-left: 60px;
+}
 
 
 
 
-  .titulo-container h3{
 
-    margin: 0;
-    margin-block-end: 5px;
+.informacionsvg {
+  display: inline-block;
+  width: 20;
+  height: 20px;
+  object-fit: cover;
+  margin-inline-start: 15px;
 
-  }
+  padding-block-end: 8px;
+}
+
+/* *label */
+
+
+
+
+.datepicker-container {
+  width: 100%;
+  display: flex;
+  margin: 0;
+}
+
+.datepicker-left {
+  width: 50%;
+  padding-inline-end: 30px;
+}
+
+.datepicker-right {
+  width: 50%;
+  padding-inline-start: 30px;
+}
+
+/* .datepicker-input{
+   
+    border: 1px solid white;
+
+  } */
+
+
+
+/* BOTON */
+
+.example-button-row button {
+  margin-block-start: 5px;
+  margin-right: 8px;
+  border-radius: 30px;
+  width: 21%;
+  height: 50px;
+  font-size: var(--smallest);
+  text-align: center;
+  color: black;
+  background-color: var(--yellow);
+  font-family: "Quicksand", sans-serif;
+
+
+
+
+}
+
+
+/* FORMULARIO INFERIOR */
+
+.formdown {
+  width: 100%;
+  margin-block-start: 50px;
+
+}
+
+.threeform form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.threeform .form-group {
+
+  width: 30%;
+
+}
+
+.threeform .form-group label {
+
+  margin-block-end: 13px;
+
+}
+
+.threeform .form-group input {
+  border: 1px solid var(--grey);
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+
+
+
+
+}
+
+/* AGREGAR ETAPA */
+
+.agregaretapa {
+  /* background: red; */
+  display: flex;
+  height: fit-content;
+  align-items: center;
+  margin-block-start: 35px;
+  width: 20%;
+
+}
+
+.agregaretapa img {
+
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin-inline-end: 10px;
+
+
+}
+
+
+/* FORMULARIO DERECHO */
+
+
+ .form-right {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--blue);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} 
+
+
+.form-right #idproyecto {
+
+  width: 40%;
+}
+
+
+.form-right #fechacreacion {
+
+  width: 50%;
+}
+
+.form-right #idproyecto {
+
+  width: 50%;
+
+}
+
+
+.form-right .example-button-row {
+  width: 50%;
+
+}
+
+.form-right .example-button-row button {
+  width: 49%;
+
+
+}
+
+.form-right .botonderecho {
+margin-inline-start: 40px;
+
+}
+
+.form-right .primerbloque {
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.form-right .ultimobloque {
+  display: flex;
+  width: 100%;
+
+}
+
+.form-right #titulos {
+
+  display: flex;
+  width: 50%;
+
+}
+
+
+#titulos .capex,
+.opex {
+  width: 100%;
+
+}
+
+#titulos .capex {
+
+  padding-inline-start: 30px;
+  padding-inline-end: 15px;
+
+}
+
+
+.form-right .firmas {
+  display: flex;
+  width: 100%;
+
+}
+
+
+
+.form-right .firmas .pilar,
+.clasificacion {
+
+  width: 50%;
+
+
+
+}
+
+
+.form-right .firmas .clasificacion  {
+
+  padding-inline-start: 30px;
+
+
+} 
+
+/* app-modal-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+

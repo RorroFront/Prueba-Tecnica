@@ -1,0 +1,30 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="titulo">Titulo</label>
+          <input id="titulo" formControlName="titulo" />
+        </div>
+        <div>
+          <label for="descripcion">Descripcion</label>
+          <input id="descripcion" formControlName="descripcion" />
+        </div>
+        <div>
+          <label for="entregable">Entregable</label>
+          <input id="entregable" formControlName="entregable" />
+        </div>
+        <div>
+          <label for="fechaInicio">Fecha Inicio</label>
+          <input id="fechaInicio" formControlName="fechaInicio" />
+        </div>
+        <div>
+          <label for="fechaFin">Fecha Fin</label>
+          <input id="fechaFin" formControlName="fechaFin" />
+        </div>
+        <div class="buttons">
+          <button type="button" (click)="onCancel()">Cancelar</button>
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
